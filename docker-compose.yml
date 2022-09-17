@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   nginx-gateway:
-    images: nginx:latest
+    image: nginx:latest
     container_name: nginx-gateway
     ports:
       - 8080:80
@@ -13,9 +13,9 @@ services:
       - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf
     environment:
       TZ: Asia/Shanghai
-    networks:
-      - nginx-gateway
+    # networks:
+    #   - nginx-gateway
 
-networks:
-  nginx-gateway:
-    driver: bridge
+# networks:
+#   nginx-gateway:
+#     driver: bridge
